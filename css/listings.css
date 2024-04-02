@@ -48,6 +48,16 @@ div#bottom-content div#listings div.listing img {
     border-radius: 5px;
 }
 
+div#bottom-content div#listings div.listing h2 a {
+    color: white;
+    text-decoration: none;
+}
+
+div#bottom-content div#listings div.listing h2 a:hover {
+    color: white;
+    text-decoration: underline;
+}
+
 div#bottom-content div#listings div.listing ul {
     list-style-type: none;
     padding: 0;

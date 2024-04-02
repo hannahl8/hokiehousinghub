@@ -1,0 +1,88 @@
+div#content div#top-content h2 {
+    margin-bottom: 0;
+}
+
+div#content div#top-content h5 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+div#content div.stars {
+    display: flex;
+    flex-direction: row;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+div#content div.stars h1 {
+    margin: 0;
+}
+
+div#content div.stars ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 10px;
+}
+
+div#content ul li {
+    display: inline;
+}
+
+div#content div.stars ul li i {
+    color: gold;
+    font-size: large;
+}
+
+div#content div#top-content img {
+    width: 100%;
+    border-radius: 5px;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+div#content div#top-content p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+div#content div#top-content ul.amenities {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+
+div#content div#bottom-content div#reviews {
+    display: block;
+    overflow-y: auto;
+    max-height: 750px;
+}
+
+div#content div#bottom-content div#reviews div.review {
+    clear: left;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border-bottom: 1px solid white;
+}
+
+div#content div#bottom-content div#reviews div.review h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+div#content div#bottom-content div#reviews div.review div.stars ul li i {
+    color: white;
+}
+
+div#content div#bottom-content div#reviews div.review p.review-description {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+div#content div#bottom-content div#reviews div.review p.review-date {
+    margin-top: 0;
+    margin-bottom: 5px;
+    font-style: italic;
+}
