@@ -1,7 +1,7 @@
 div#top-content {
     display: block;
     clear: left;
-    background-image: url('/img/vtcampus.png');
+    background-image: url('vtcampus.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
