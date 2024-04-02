@@ -1,0 +1,51 @@
+div#top-content {
+    display: block;
+    clear: left;
+    background-image: url('/img/vtcampus.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 5% 25%;
+}
+
+div#top-content h1 {
+    margin: 0 0 200px 0;
+    text-align: center;
+}
+
+div#top-content h2 {
+    margin: 0 0 100px 0;
+    padding: 5px;
+    text-align: center;
+    background-color: black;
+    border-radius: 10px;
+}
+
+div#bottom-content {
+    display: block;
+    clear: left;
+    text-align: center;
+    padding: 50px;
+    border-bottom: 1px solid white;
+}
+
+div#bottom-content button {
+    padding: 25px 50px;
+    border-radius: 10px;
+    background-color: black;
+    color: white;
+    align-items: center;
+    margin: 0 100px;
+    font-size: large;
+}
+
+div#bottom-content button:hover {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+@media all and (min-width: 875px) {
+
+
+}

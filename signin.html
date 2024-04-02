@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport"
           content="width=device-width">
-    <title>Hokie Housing Hub</title>
+    <title>Hokie Housing Hub | Login</title>
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/scripts.js"></script>
     <link rel="stylesheet"
@@ -12,7 +12,7 @@
           href="css/responsive.css">
     <link rel="stylesheet"
           type="text/css"
-          href="css/base.css">
+          href="css/signinup.css">
     <!--    https://www.w3schools.com/icons/icons_reference.asp     -->
     <script src="https://kit.fontawesome.com/29ce78ff92.js"
             crossorigin="anonymous"></script>
@@ -32,23 +32,39 @@
 </div> <!-- end header -->
 
 <div id="top-content">
-    <h1>This is Home.</h1>
-    <h2>Live together, Learn together. A community for Virginia Tech Students</h2>
+    <div id="login">
+        <h1>Student Login</h1>
+        <form id="login-form">
+            <label for="username">Username</label><br>
+            <input type="text"
+                   id="username"
+                   name="username"
+                   placeholder="Enter Username/Email"
+                   required><br>
+
+            <br>
+
+            <label for="password">Password</label><br>
+            <input type="password"
+                   id="password"
+                   name="password"
+                   placeholder="Enter Password"
+                   required><br>
+
+            <br>
+
+            <input type="checkbox"
+                   id="remember"
+                   name="remember">
+            <label for="remember">Remember me?</label><br>
+
+            <input type="submit"
+                   value="Log in">
+        </form>
+
+        <p>Don't have an account? <a href="signup.html">Create Account</a></p>
+    </div>
 </div> <!-- end top-content -->
-
-<div id="bottom-content">
-    <button id="on-campus-button"
-            onclick="location.href='oncampus.html'">
-        <i class="fas fa-building"></i>
-        On-Campus
-    </button>
-    <button id="off-campus-button"
-            onclick="location.href='offcampus.html'">
-        <i class="fas fa-home"></i>
-        Off-Campus
-    </button>
-
-</div> <!-- end bottom-content -->
 
 <div id="footer">
     <p id="footer-nav"><a href="base.html">HOME</a> | <a href="oncampus.html">ON CAMPUS</a> | <a href="offcampus.html">OFF

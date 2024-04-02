@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width">
+    <title>Hokie Housing Hub | Off-Campus</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/responsive.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/listings.css">
+    <!--    https://www.w3schools.com/icons/icons_reference.asp     -->
+    <script src="https://kit.fontawesome.com/29ce78ff92.js"
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div id="header">
+    <h1>Hokie Housing Hub</h1>
+    <ul id="primary-nav">
+        <li><a href="base.html">HOME</a></li>
+        <li><a href="oncampus.html">ON-CAMPUS</a></li>
+        <li><a href="offcampus.html">OFF-CAMPUS</a></li>
+        <li><a href="signin.html">SIGN IN</a></li>
+    </ul>
+</div> <!-- end header -->
+
+<div id="content">
+    <div id="top-content">
+
+        <h2>Filter Options</h2>
+
+        <form id="filter-form">
+            <label for="bedrooms">Bedrooms:</label><br>
+            <select id="bedrooms"
+                    name="bedrooms">
+                <option value="zero">Any</option>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4+</option>
+            </select><br>
+
+            <br>
+
+            <label for="bathrooms">Bathrooms:</label><br>
+            <select id="bathrooms"
+                    name="bathrooms">
+                <option value="zero">Any</option>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4+</option>
+            </select><br>
+
+            <br>
+
+            <label for="price">Price Range:</label><br>
+            <select id="price"
+                    name="price">
+                <option value="one">Under $500</option>
+                <option value="two">$500 - $1000</option>
+                <option value="three">$1000 - $1500</option>
+                <option value="four">$1500 - $2000</option>
+                <option value="five">$2000 - $2500</option>
+                <option value="six">$2500 - $3000</option>
+                <option value="seven">$3000 - $3500</option>
+                <option value="eight">$3500 - $4000</option>
+                <option value="nine">$4000 - $4500</option>
+                <option value="ten">$4500 - $5000</option>
+                <option value="eleven">$5000+</option>
+            </select><br>
+
+            <br>
+
+            <label>Amenities:</label><br>
+            <input type="checkbox"
+                   id="air-conditioning"
+                   name="amenities"
+                   value="air-conditioning">
+            <label for="air-conditioning"><i class="far fa-snowflake"></i> Air Conditioning</label><br>
+            <input type="checkbox"
+                   id="pool"
+                   name="amenities"
+                   value="pool">
+            <label for="pool"><i class='fas fa-swimming-pool'></i> Pool</label><br>
+
+            <br>
+
+            <input type="submit"
+                   value="Apply Filters">
+        </form>
+    </div> <!-- end top-content -->
+
+    <div id="bottom-content">
+        <h1>Off-Campus Housing</h1>
+        <!--    Show list of dorms, each dorm item should have a name, image, dorm type, and ammentities listed -->
+        <div id="listings">
+            <div class="listing">
+                <img src="img/terrace-view.png"
+                     alt="Terrace View">
+                <h2>Terrace View</h2>
+                <p>2 bedrooms, 2 bathrooms</p>
+                <p>$1500/month</p>
+                <ul>
+                    <li><i class="far fa-snowflake"></i></li>
+                    <li><i class='fas fa-swimming-pool'></i></li>
+                </ul>
+            </div>
+            <div class="listing">
+                <img src="img/foxridge.png"
+                     alt="Foxridge">
+                <h2>Foxridge</h2>
+                <p>3 bedrooms, 2 bathrooms</p>
+                <p>$2000/month</p>
+                <ul>
+                    <li><i class="far fa-snowflake"></i></li>
+                    <li><i class='fas fa-swimming-pool'></i></li>
+                </ul>
+            </div>
+            <div class="listing">
+                <img src="img/collegiate-suites.png"
+                     alt="Collegiate Suites">
+                <h2>Collegiate Suites</h2>
+                <p>4 bedrooms, 4 bathrooms</p>
+                <p>$2500/month</p>
+                <ul>
+                    <li><i class="far fa-snowflake"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div> <!-- end bottom-content -->
+</div>
+
+<div id="footer">
+    <p id="footer-nav"><a href="base.html">HOME</a> | <a href="oncampus.html">ON CAMPUS</a> | <a href="offcampus.html">OFF
+        CAMPUS</a></p>
+    <p id="copyright">&copy; 2024 Hokie Housing Hub. All rights reserved.</p>
+    <p>Blacksburg, VA 24060</p>
+    <p>Phone: 540-555-5555</p>
+    <p>Email: <a href="mailto:xxx@vt.edu">xxx@vt.edu</a></p>
+</div> <!-- end footer -->
+
+</body>
+
+</html>

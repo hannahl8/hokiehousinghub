@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width">
+    <title>Hokie Housing Hub | On-Campus</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/responsive.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/listings.css">
+    <!--    https://www.w3schools.com/icons/icons_reference.asp     -->
+    <script src="https://kit.fontawesome.com/29ce78ff92.js"
+            crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+<div id="header">
+    <h1>Hokie Housing Hub</h1>
+    <ul id="primary-nav">
+        <li><a href="base.html">HOME</a></li>
+        <li><a href="oncampus.html">ON-CAMPUS</a></li>
+        <li><a href="offcampus.html">OFF-CAMPUS</a></li>
+        <li><a href="signin.html">SIGN IN</a></li>
+    </ul>
+</div> <!-- end header -->
+
+<div id="content">
+    <div id="top-content">
+
+        <h2>Filter Options</h2>
+
+        <form id="filter-form">
+            <label for="dorm-type">Dorm Type:</label><br>
+            <select id="dorm-type"
+                    name="dorm-type">
+                <option value="all">All</option>
+                <option value="traditional">Single</option>
+                <option value="apartment">Double</option>
+                <option value="apartment">Suite</option>
+            </select><br>
+
+            <br>
+
+            <label>Amenities:</label><br>
+            <input type="checkbox"
+                   id="air-conditioning"
+                   name="amenities"
+                   value="air-conditioning">
+            <label for="air-conditioning"><i class="far fa-snowflake"></i> Air Conditioning</label><br>
+            <input type="checkbox"
+                   id="private-bathrooms"
+                   name="amenities"
+                   value="private-bathrooms">
+            <label for="private-bathrooms"><i class="fas fa-shower"></i> In/Suite Bathroom</label><br>
+
+            <br>
+
+            <input type="submit"
+                   value="Apply Filters">
+        </form>
+    </div> <!-- end top-content -->
+
+    <div id="bottom-content">
+        <h1>On-Campus Dorms</h1>
+        <!--    Show list of dorms, each dorm item should have a name, image, dorm type, and ammentities listed -->
+        <div id="listings">
+            <div class="listing">
+                <img src="img/cochrane-hall.png"
+                     alt="Cochrane Hall">
+                <h2>Cochrane Hall</h2>
+                <p>Suite</p>
+                <ul>
+                    <li><i class="far fa-snowflake"></i></li>
+                    <li><i class="fas fa-shower"></i></li>
+                </ul>
+            </div>
+            <div class="listing">
+                <img src="img/harper-hall.png"
+                     alt="harper hall">
+                <h2>Harper Hall</h2>
+                <p>Suite</p>
+                <ul>
+                    <li><i class="far fa-snowflake"></i></li>
+                    <li><i class="fas fa-shower"></i></li>
+                </ul>
+            </div>
+            <div class="listing">
+                <img src="img/eggleston-hall.png"
+                     alt="Eggleston Hall">
+                <h2>Eggleston Hall</h2>
+                <p>Single</p>
+                <ul>
+                    <li><i class="far fa-snowflake"></i></li>
+                </ul>
+            </div>
+            <div class="listing">
+                <img src="img/new-hall-west.png"
+                     alt="New Hall West">
+                <h2>New Hall West</h2>
+                <p>Double</p>
+                <ul>
+                    <li><i class="far fa-snowflake"></i></li>
+                    <li><i class="fas fa-shower"></i></li>
+                </ul>
+            </div>
+            <div class="listing">
+                <img src="img/new-residence-hall-east.png"
+                     alt="New Residence Hall - East">
+                <h2>New Residence Hall - East</h2>
+                <p>Suite</p>
+                <ul>
+                    <li><i class="far fa-snowflake"></i></li>
+                    <li><i class="fas fa-shower"></i></li>
+                </ul>
+            </div>
+        </div>
+    </div> <!-- end bottom-content -->
+</div>
+
+<div id="footer">
+    <p id="footer-nav"><a href="base.html">HOME</a> | <a href="oncampus.html">ON CAMPUS</a> | <a href="offcampus.html">OFF
+        CAMPUS</a></p>
+    <p id="copyright">&copy; 2024 Hokie Housing Hub. All rights reserved.</p>
+    <p>Blacksburg, VA 24060</p>
+    <p>Phone: 540-555-5555</p>
+    <p>Email: <a href="mailto:xxx@vt.edu">xxx@vt.edu</a></p>
+</div> <!-- end footer -->
+
+</body>
+
+</html>
