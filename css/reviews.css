@@ -52,6 +52,10 @@ div#content div#top-content ul.amenities {
     margin-bottom: 5px;
 }
 
+div#content div#top-content button {
+    margin-top: 10px;
+}
+
 
 div#content div#bottom-content div#reviews {
     display: block;

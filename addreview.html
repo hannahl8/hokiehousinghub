@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+          content="width=device-width">
+    <title>Hokie Housing Hub | Reviews</title>
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/scripts.js"></script>
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/responsive.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/listings.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/reviews.css">
+    <link rel="stylesheet"
+          type="text/css"
+          href="css/addreview.css">
+    <!--    https://www.w3schools.com/icons/icons_reference.asp     -->
+    <script src="https://kit.fontawesome.com/29ce78ff92.js"
+            crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div id="header">
+    <h1>Hokie Housing Hub</h1>
+    <ul id="primary-nav">
+        <li><a href="base.html">HOME</a></li>
+        <li><a href="oncampus.html">ON-CAMPUS</a></li>
+        <li><a href="offcampus.html">OFF-CAMPUS</a></li>
+        <li><a href="signin.html">SIGN IN</a></li>
+    </ul>
+</div> <!-- end header -->
+
+<div id="content">
+    <div id="top-content">
+
+        <h2>Terrace View</h2>
+        <h5>123 Terrace Rd, Blacksburg, VA 23030</h5>
+        <div class="stars">
+            <h1>3.8</h1>
+            <ul>
+                <li><i class='fas fa-star'></i></li>
+                <li><i class='fas fa-star'></i></li>
+                <li><i class='fas fa-star'></i></li>
+                <li><i class='far fa-star'></i></li>
+                <li><i class='far fa-star'></i></li>
+            </ul>
+        </div>
+        <p class="number-reviews">6 Reviews</p>
+        <img src="img/terrace-view.png"
+             alt="Terrace View">
+        <p>2 bedrooms, 2 bathrooms</p>
+        <p>$1500/month</p>
+        <ul class="amenities">
+            <li><i class="far fa-snowflake"></i></li>
+            <li><i class='fas fa-swimming-pool'></i></li>
+        </ul>
+
+        <!--        <button id="AddReview" onclick="location.href='addreview.html'">Add Review</button>-->
+
+
+    </div> <!-- end top-content -->
+
+    <div id="bottom-content">
+        <h1>Add Review</h1>
+
+        <form id="add-review-form"
+              action="reviews.html"
+              method="post">
+            <label for="add-review-rating">Rating:</label><br>
+            <input type="number"
+                   id="add-review-rating"
+                   name="add-review-rating"
+                   min="1"
+                   max="5"
+                   required><br>
+
+            <br>
+
+            <label for="add-review-textarea">Review:</label><br>
+            <textarea id="add-review-textarea"
+                      name="add-review-textarea"
+                      required></textarea><br>
+
+            <br>
+
+            <input type="button"
+                   onclick="location.href='reviews.html'"
+                    value="Cancel">
+            <input id="add-review-submit-button"
+                   type="submit"
+                   value="Submit">
+        </form>
+    </div> <!-- end bottom-content -->
+</div>
+
+<div id="footer">
+    <p id="footer-nav"><a href="base.html">HOME</a> | <a href="oncampus.html">ON CAMPUS</a> | <a href="offcampus.html">OFF
+        CAMPUS</a></p>
+    <p id="copyright">&copy; 2024 Hokie Housing Hub. All rights reserved.</p>
+    <p>Blacksburg, VA 24060</p>
+    <p>Phone: 540-555-5555</p>
+    <p>Email: <a href="mailto:xxx@vt.edu">xxx@vt.edu</a></p>
+</div> <!-- end footer -->
+
+</body>
+
+</html>
