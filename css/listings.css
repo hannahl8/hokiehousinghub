@@ -14,7 +14,7 @@ div#top-content {
     background-color: #28282B;
 }
 
-div#top-content form#filter-form select, input[type="submit"], button {
+div#top-content form select, input[type="submit"], button {
     width: 100%;
     padding: 5px;
     background-color: black;

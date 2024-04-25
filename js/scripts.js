@@ -1,15 +1,10 @@
 $(document).ready(function () {
-    console.log('DOM is ready');
-
+    // add review button
     $('button#add-review').click(function (event) {
         event.preventDefault();
-
-        // Hide the add-review button and the reviews
         $(this).hide();
         $('div#bottom-content h1').hide();
         $('div#bottom-content div.review').hide();
-
-        // Add the form to the div#bottom-content
         const formHTML = `
             <form id="add-review-form" action="#" method="post">
                 <h1>Add Review</h1>
@@ -24,19 +19,14 @@ $(document).ready(function () {
             </form>
         `;
         $('div#bottom-content').append(formHTML);
-
-        // Add click event for the cancel button
         $('#cancel-button').click(function () {
             $('#add-review-form').remove();
             $('div#bottom-content h1').show();
             $('div#bottom-content div.review').show();
             $('button#add-review').show();
         });
-
-        // Add submit event for the form
         $('#add-review-form').submit(function (event) {
             event.preventDefault();
-
             const name = 'Anonymous';
             const rating = (Math.round($(this).children('input#add-review-rating').val() * 10) / 10).toFixed(1);
             const review = $(this).children('textarea#add-review-textarea').val();
@@ -45,8 +35,6 @@ $(document).ready(function () {
                 day: 'numeric',
                 year: 'numeric'
             });
-
-            // Append the new review to the reviews
             const reviewHTML = `
                 <div class="review">
                     <h2 class="review-name">${name}</h2>
@@ -61,30 +49,115 @@ $(document).ready(function () {
                 </div>
             `;
             $('div#reviews').append(reviewHTML);
-
-            // Remove the form and show the reviews and the add-review button
             $(this).remove();
             $('div#bottom-content h1').show();
             $('div#bottom-content div.review').show();
             $('button#add-review').show();
-
-            // Count the number of reviews
             var reviewCount = $('div#bottom-content div.review').length;
-
-            // Calculate the new average rating
             var totalRating = 0;
             $('div#bottom-content div.review').each(function () {
                 totalRating += parseFloat($(this).find('div.stars h1').text());
             });
             var averageRating = totalRating / reviewCount;
-
-            // Update the number of reviews and the average rating
             $('div#top-content p.number-reviews').text(reviewCount + ' Reviews');
             $('div#top-content div.stars h1').text(averageRating.toFixed(1));
-
-            // Update the stars in div.stars ul
             var starsHTML = Array(5).fill().map((_, i) => `<li><i class='fa${i < Math.floor(averageRating) ? 's' : 'r'} fa-star'></i></li>`).join('');
             $('div#top-content div.stars ul').html(starsHTML);
+        });
+    });
+    // filter form on campus
+    $('form#filter-form-oncampus').submit(function (event) {
+        event.preventDefault();
+        var filterDormType = $('#dorm-type').val();
+        var filterAirConditioning = $('#air-conditioning').is(':checked');
+        var filterPrivateBathrooms = $('#private-bathrooms').is(':checked');
+        $('div.listing').each(function () {
+            var listingDormTypes = $(this).find('p').eq(0).text().split('|').map(function (dormType) {
+                return dormType.trim();
+            });
+            var listingAirConditioning = $(this).find('ul li i.far.fa-snowflake').length > 0;
+            var listingPrivateBathrooms = $(this).find('ul li i.fas.fa-shower').length > 0;
+            if ((filterDormType !== 'all' && listingDormTypes.indexOf(filterDormType) === -1) ||
+                (filterAirConditioning && !listingAirConditioning) ||
+                (filterPrivateBathrooms && !listingPrivateBathrooms)) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
+        });
+    });
+    // filter form off campus
+    $('form#filter-form-offcampus').submit(function (event) {
+        event.preventDefault();
+        var filterBedrooms = $('#bedrooms').val();
+        var filterBathrooms = $('#bathrooms').val();
+        var filterPrice = $('#price').val();
+        var filterAirConditioning = $('#air-conditioning').is(':checked');
+        var filterPool = $('#pool').is(':checked');
+        $('div.listing').each(function () {
+            // bedrooms
+            var listingBedrooms = $(this).find('p').eq(0).text().split('|')[0].trim();
+            var listingBedroomsArray = listingBedrooms.split(',').map(function (item) {
+                return item.trim();
+            });
+            var listingBedroomsList = [];
+            for (var i = 0; i < listingBedroomsArray.length; i++) {
+                var bedroomNumber = listingBedroomsArray[i].split(' ')[0];
+                if (!isNaN(bedroomNumber)) {
+                    listingBedroomsList.push(Number(bedroomNumber));
+                }
+            }
+            // bathrooms
+            var listingBathrooms = $(this).find('p').eq(0).text().split('|')[1].trim();
+            var listingBathroomsArray = listingBathrooms.split(',').map(function (item) {
+                return item.trim();
+            });
+            var listingBathroomsList = [];
+            for (var i = 0; i < listingBathroomsArray.length; i++) {
+                var bathroomNumber = listingBathroomsArray[i].split(' ')[0];
+                if (!isNaN(bathroomNumber)) {
+                    listingBathroomsList.push(Number(bathroomNumber));
+                }
+            }
+            // price
+            var listingPrice = $(this).find('p').eq(1).text().split('/')[0].trim();
+            var listingPriceArray = listingPrice.split('-').map(function (item) {
+                return item.trim();
+            });
+            var listingPriceList = [];
+            for (var i = 0; i < listingPriceArray.length; i++) {
+                var priceNumber = Number(listingPriceArray[i].replace('$', '').replace(/,/g, ''));
+                listingPriceList.push(priceNumber);
+            }
+            var listingAirConditioning = $(this).find('ul li i.far.fa-snowflake').length > 0;
+            var listingPool = $(this).find('ul li i.fas.fa-swimming-pool').length > 0;
+            var meetsCriteria = (
+                (filterBedrooms === 'Any' || listingBedroomsList.includes(Number(filterBedrooms))) &&
+                (filterBathrooms === 'Any' || listingBathroomsList.includes(Number(filterBathrooms))) &&
+                (filterPrice === 'Any' || checkPriceFilter(filterPrice, listingPriceList)) &&
+                (!filterAirConditioning || listingAirConditioning) &&
+                (!filterPool || listingPool)
+            );
+
+            function checkPriceFilter(filterPrice, listingPriceList) {
+                var maxPrice = Math.max(...listingPriceList);
+                var minPrice = Math.min(...listingPriceList);
+                filterPrice = Number(filterPrice);
+                var filterMinPrice = filterPrice - 499;
+                if (filterPrice === 3001) {
+                    return maxPrice >= filterPrice;
+                } else if (filterPrice === 500) {
+                    return minPrice < filterPrice;
+                } else {
+                    return maxPrice >= filterMinPrice && minPrice <= filterPrice;
+                }
+            }
+
+            if (!meetsCriteria) {
+                $(this).hide();
+            } else {
+                $(this).show();
+            }
         });
     });
 });
